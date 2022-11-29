@@ -1,0 +1,334 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+#screen {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+
+#game {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#game_background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: aqua;
+}
+
+/******************   game_elements  ************************/
+#game_elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+#red_container1 {
+  position: absolute;
+  aspect-ratio: 1/1;
+}
+
+#red_sprite1 {
+  width: 100%;
+  height: 100%;
+  background-image: url(smile_red.svg);
+  background-size: 100%;
+}
+
+#blue_container1 {
+  position: absolute;
+  aspect-ratio: 1/1;
+}
+
+#blue_sprite1 {
+  width: 100%;
+  height: 100%;
+  background-image: url(smile_blue.svg);
+  background-size: 100%;
+}
+
+/******************   game_ui  ************************/
+#game_ui {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+#score_board {
+  position: absolute;
+  bottom: 2%;
+  right: 2%;
+  font-size: 300%;
+  font-family: monospace;
+}
+
+#life_board {
+  position: absolute;
+  bottom: 2%;
+  left: 2%;
+  display: flex;
+  gap: 1%;
+}
+#life_board img {
+  width: 8%;
+}
+
+#liv {
+  font-size: 300%;
+  font-family: monospace;
+}
+
+#time_container {
+  position: absolute;
+  width: 3%;
+  height: 30%;
+  top: 5%;
+  left: 95%;
+  border: 0.2vw solid white;
+}
+
+#time_sprite {
+  width: 100%;
+  height: 100%;
+  transform-origin: 50% 100%;
+  background-color: lime;
+}
+
+.time {
+  animation-name: time_kf;
+  animation-duration: 20s;
+  animation-fill-mode: both;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
+
+@keyframes time_kf {
+  0% {
+    transform: scaleY(1);
+    background-color: lime;
+  }
+
+  50% {
+    transform: scaleY(0.5);
+    background-color: yellow;
+  }
+
+  100% {
+    transform: scaleY(0);
+    background-color: red;
+  }
+}
+
+/******************   delay  ************************/
+
+.delay1 {
+  animation-delay: 0s;
+}
+
+.delay2 {
+  animation-delay: 0.5s;
+}
+
+.delay3 {
+  animation-delay: 1s;
+}
+
+.delay4 {
+  animation-delay: 1.5s;
+}
+
+/******************   positioner  ************************/
+
+.pos1 {
+  top: 27.5%;
+  left: 25.5%;
+  z-index: 5;
+  width: 5%;
+}
+
+#box1 {
+  position: absolute;
+  top: 27.5%;
+  left: 25%;
+  width: 6%;
+  height: 10%;
+  background-color: darkgreen;
+  z-index: 10;
+}
+
+.pos2 {
+  top: 27.5%;
+  left: 55.5%;
+  z-index: 5;
+  width: 5%;
+}
+
+#box2 {
+  position: absolute;
+  top: 27.5%;
+  left: 55%;
+  width: 6%;
+  height: 10%;
+  background-color: darkgreen;
+  z-index: 10;
+}
+
+.pos3 {
+  top: 45.5%;
+  left: 15.5%;
+  z-index: 15;
+  width: 7.5%;
+}
+
+#box3 {
+  position: absolute;
+  top: 45%;
+  left: 15%;
+  width: 8.5%;
+  height: 15%;
+  background-color: green;
+  z-index: 20;
+}
+
+.pos4 {
+  top: 45.5%;
+  left: 40.5%;
+  z-index: 15;
+  width: 7.5%;
+}
+
+#box4 {
+  position: absolute;
+  top: 45%;
+  left: 40%;
+  width: 8.5%;
+  height: 15%;
+  background-color: green;
+  z-index: 20;
+}
+
+.pos5 {
+  top: 71.5%;
+  left: 36%;
+  z-index: 25;
+  width: 10%;
+}
+
+#box5 {
+  position: absolute;
+  top: 71%;
+  left: 35%;
+  width: 12%;
+  height: 21%;
+  background-color: olivedrab;
+  z-index: 30;
+}
+
+.pos6 {
+  top: 71.5%;
+  left: 66%;
+  z-index: 25;
+  width: 10%;
+}
+
+#box6 {
+  position: absolute;
+  top: 71%;
+  left: 65%;
+  width: 12%;
+  height: 21%;
+  background-color: olivedrab;
+  z-index: 30;
+}
+
+/******************   animationer  ************************/
+
+.frys {
+  animation-play-state: paused;
+}
+
+.forsvind {
+  animation-name: forsvind_kf;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+}
+
+@keyframes forsvind_kf {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.op_ned {
+  animation-name: op_ned_kf;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+}
+
+.speed1 {
+  animation-duration: 2s;
+}
+
+.speed2 {
+  animation-duration: 1.5s;
+}
+
+.speed3 {
+  animation-duration: 1s;
+}
+
+@keyframes op_ned_kf {
+  0% {
+    transform: translateY(0);
+  }
+
+  10% {
+    transform: translateY(0);
+  }
+
+  45% {
+    transform: translateY(-110%);
+  }
+
+  50% {
+    transform: translateY(-110%);
+  }
+
+  55% {
+    transform: translateY(-110%);
+  }
+
+  90% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
